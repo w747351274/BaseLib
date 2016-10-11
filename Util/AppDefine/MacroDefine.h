@@ -83,7 +83,7 @@ CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].siz
 
 //调试模式下输入NSLog，发布后不再输入。
 #ifndef __OPTIMIZE__
-#define NSLog(...)  { printf("%s Line:%d Time:",__func__, __LINE__) ;NSLog(__VA_ARGS__);}
+#define NSLog(...)  { NSLog(__VA_ARGS__);}
 #else
 #define NSLog(...) {}
 #endif
