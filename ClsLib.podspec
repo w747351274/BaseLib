@@ -102,6 +102,7 @@ Pod::Spec.new do |s|
     end
     util.subspec 'BaseClass' do |baseClass|
     baseClass.source_files = 'Util/BaseClass/*.{h,m}'
+    baseClass.dependency 'Masonry', '~> 0.6.2'
     end
     util.subspec 'ResourceManager' do |resourceManager|
     resourceManager.source_files = 'Util/ResourceManager/*.{h,m}'
