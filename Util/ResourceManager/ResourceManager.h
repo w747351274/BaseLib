@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIImage.h>
 
+#define UserId @""
 static NSString *appBundleName = @"tc_default";
 
 NS_INLINE UIImage * UIResourceBundleImage(NSString *strPath){
