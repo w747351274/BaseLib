@@ -9,16 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIImage.h>
 
-
-#define UserId @"testUserId"
-
+static NSString *appBundleName = @"tc_default";
 
 NS_INLINE UIImage * UIResourceBundleImage(NSString *strPath){
-    return [UIImage imageNamed:[NSString stringWithFormat:@"default.bundle/image/%@.png",strPath]];
+    return [UIImage imageNamed:[NSString stringWithFormat:@"%@.bundle/image/%@.png",appBundleName,strPath]];
 }
 
 NS_INLINE NSDictionary *PropertyList(NSString *strPath){
-    NSString *strBundlePath = [[NSBundle mainBundle]pathForResource:@"default" ofType:@"bundle"];
+    NSString *strBundlePath = [[NSBundle mainBundle]pathForResource:appBundleName ofType:@"bundle"];
     NSBundle* myBundle =[NSBundle bundleWithPath:strBundlePath];
     
     // Obtain a reference to a loadable bundle.
@@ -29,7 +27,7 @@ NS_INLINE NSDictionary *PropertyList(NSString *strPath){
 }
 
 NS_INLINE NSArray *PropertyArrayList(NSString *strPath){
-    NSString *strBundlePath = [[NSBundle mainBundle]pathForResource:@"default" ofType:@"bundle"];
+    NSString *strBundlePath = [[NSBundle mainBundle]pathForResource:appBundleName ofType:@"bundle"];
     NSBundle* myBundle =[NSBundle bundleWithPath:strBundlePath];
     
     // Obtain a reference to a loadable bundle.
@@ -41,7 +39,7 @@ NS_INLINE NSArray *PropertyArrayList(NSString *strPath){
 }
 
 NS_INLINE NSData *UIResourceBundleFile(NSString *strPath){
-    NSString *strBundlePath = [[NSBundle mainBundle]pathForResource:@"default" ofType:@"bundle"];
+    NSString *strBundlePath = [[NSBundle mainBundle]pathForResource:appBundleName ofType:@"bundle"];
     NSBundle* myBundle =[NSBundle bundleWithPath:strBundlePath];
     
     // Obtain a reference to a loadable bundle.
@@ -71,4 +69,5 @@ NS_INLINE NSData *UIResourceBundleFile(NSString *strPath){
 +(BOOL)createPlistFile:(NSString *)strFileName;
 +(NSDictionary *)dicFromPlist:(NSString *)strFileName;
 +(NSArray *)arrFromPlist:(NSString *)strFileName;
+
 @end
