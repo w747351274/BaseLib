@@ -98,11 +98,10 @@ Pod::Spec.new do |s|
   s.subspec 'Util' do |util|
     util.subspec 'HttpUtil' do |httpUtil|
     httpUtil.source_files = 'Util/HttpUtil/*.{h,m}'
-    httpUtil.dependency 'AFNetworking', '~> 2.6.0'
+    httpUtil.dependency 'AFNetworking', '~> 3.0.1'
     end
     util.subspec 'BaseClass' do |baseClass|
     baseClass.source_files = 'Util/BaseClass/*.{h,m}'
-    baseClass.dependency 'Masonry', '~> 0.6.2'
     end
     util.subspec 'ResourceManager' do |resourceManager|
     resourceManager.source_files = 'Util/ResourceManager/*.{h,m}'
